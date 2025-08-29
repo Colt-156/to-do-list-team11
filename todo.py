@@ -21,6 +21,7 @@ def delete_tasks():
         numtask=int(input("Which task(ex. 1,2,ect.)"))
         print(f"Deleted {tasks[numtask-1]}")
         tasks.pop(numtask-1)
+        view_tasks()
 # Step 5: Mark task complete
 
 def mark_complete():
