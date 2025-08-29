@@ -2,6 +2,7 @@
 
 # Step 1: Start with an empty list to hold tasks
 tasks = []
+
 completedtasks= []
 
 # Step 2: Add a task
@@ -12,6 +13,7 @@ def add_task(task):
 def view_tasks():
     for i, task in enumerate(tasks, start=1):
         print(f"{i}. {task}")
+
 # Step 4: Delete a task
 def delete_tasks():
     Deleted_Tasks=input("Do you want to remove any tasks(y/n)")
@@ -20,11 +22,15 @@ def delete_tasks():
         print(f"Deleted {tasks[numtask-1]}")
         tasks.pop(numtask-1)
 # Step 5: Mark task complete
+
 def mark_complete():
     Completed_Tasks=input("Have you completed any tasks(y/n)")
     if Completed_Tasks=="y":
         numtask=int(input("Which task(ex. 1,2,ect.)"))
-        completedtasks.append(numtask-1)
+        print(f"You have completed {tasks[numtask-1]}")
+        completedtasks.append(tasks[numtask-1])
+        print(f"You have completed these tasks {completedtasks}")
+        tasks.pop(numtask-1)
 
 
 
@@ -34,6 +40,8 @@ def mark_complete():
 if __name__ == "__main__":
     add_task("Finish Cyber 201 assignment")
     add_task("Push code to GitHub")
+    add_task("Get silksong")
+    add_task("Finish cloud nine website")
     view_tasks()
     delete_tasks()
     mark_complete()
